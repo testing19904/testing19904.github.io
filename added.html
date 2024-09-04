@@ -17,7 +17,7 @@
 
     <script>
         function onSubmit() {
-            var response = grecaptcha.getResponse();
+            var response = g-recaptcha.getResponse();
             if (response.length === 0) {
                 // If reCAPTCHA failed
                 window.location.href = 'failed.html';
