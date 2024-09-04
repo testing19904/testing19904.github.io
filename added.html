@@ -19,23 +19,6 @@
         data-sitekey="6LcBvDYqAAAAAJSZQKgLNxRxt9vc6vbguBJrXLWr" 
         data-callback='onSubmit' 
         data-action='submit'>Submit</button>
-    <form id="captchaForm">
-        <!-- reCAPTCHA widget -->
-        <div class="g-recaptcha" data-sitekey=" 6LcBvDYqAAAAAJSZQKgLNxRxt9vc6vbguBJrXLWr "></div>
-        <button type="button" onclick="onSubmit()">Submit</button>
-    </form>
-
-    <script>
-        function onSubmit() {
-            var response = g-recaptcha.getResponse();
-            if (response.length === 0) {
-                // If reCAPTCHA failed
-                window.location.href = 'failed.html';
-            } else {
-                // Success action (for now, just an alert)
-                alert('CAPTCHA verified successfully!');
-            }
-        }
-    </script>
+   
 </body>
 </html>
