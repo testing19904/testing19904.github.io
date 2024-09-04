@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Website</title>
+    <!-- Load the reCAPTCHA API -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <h1>Hi</h1>
+    <form id="captchaForm">
+        <!-- reCAPTCHA widget -->
+        <div class="g-recaptcha" data-sitekey="your-site-key-here"></div>
+        <button type="button" onclick="onSubmit()">Submit</button>
+    </form>
+
+    <script>
+        function onSubmit() {
+            var response = grecaptcha.getResponse();
+            if (response.length === 0) {
+                // If reCAPTCHA failed
+                window.location.href = 'failed.html';
+            } else {
+                // Success action (for now, just an alert)
+                alert('CAPTCHA verified successfully!');
+            }
+        }
+    </script>
+</body>
+</html>
