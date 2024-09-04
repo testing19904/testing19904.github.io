@@ -6,19 +6,29 @@
     <title>Simple Website</title>
     <!-- Load the reCAPTCHA API -->
     <script src="https://www.google.com/recaptcha/api.js"></script>
-     <script>
-   function onSubmit(token) {
-     document.getElementById("demo-form").submit();
-   }
- </script>
-    
+    <script>
+        function onSubmit(token) {
+            // Here you would send 'token' to your server to verify the score.
+            // Since you want a simple redirect, we’ll simulate this with JS.
+
+            // Assuming the token is valid (e.g., server validation succeeds)
+            var success = true; // Replace this with actual server response
+
+            if (success) {
+                // Redirect to success page (or handle success)
+                alert('CAPTCHA verified successfully!');
+            } else {
+                // Redirect to the failed page if the CAPTCHA fails
+                window.location.href = 'failed.html';
+            }
+        }
+    </script>
 </head>
 <body>
     <h1>Hi</h1>
-    <button class="g-recaptcha" 
-        data-sitekey="6LcBvDYqAAAAAJSZQKgLNxRxt9vc6vbguBJrXLWr" 
-        data-callback='onSubmit' 
-        data-action='submit'>Submit</button>
-   
+    <button class="g-recaptcha"
+        data-sitekey="your-site-key"
+        data-callback="onSubmit"
+        data-action="submit">Submit</button>
 </body>
 </html>
